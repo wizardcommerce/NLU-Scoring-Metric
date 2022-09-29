@@ -178,8 +178,9 @@ def main(args):
             contexts=contexts,
         )
 
+        responses = np.array(responses)
         idxs = subdf.index.values[:len(responses)]
-        df[['pred_intent', 'confidence']].loc[idxs] = np.array(responses)
+        df['pred_intent'].loc[idxs], df['confidence'].loc[idxs] = responses[:,0], responses[:,1]
 
     # save to a file?
     df.to_csv(args.input, index=False)
