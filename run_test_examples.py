@@ -194,8 +194,7 @@ if __name__ == '__main__':
                         required=False, default='body')
     parser.add_argument('--conversation_delimiting_column',
                         required=False, default='conversation_id')
-    parser.add_argument('--campaign_id', required=False, type=int, choices=[
-                        46, 47, 44, 45], help='see https://www.mindomo.com/mindmap/draft-3d2d6c05bea043c590268db245eddbc7 for the flow the number is associated with')
+    parser.add_argument('--campaign_id', required=False, type=int, help='One of set: [46, 47, 44, 45]. See https://www.mindomo.com/mindmap/draft-3d2d6c05bea043c590268db245eddbc7 for the flow the number is associated with')
     parser.add_argument('--user_id', required=False, type=int, default=1)
     parser.add_argument('--project_id', type=str,
                         required=True, help='the unique DF project id')
